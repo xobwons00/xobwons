@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상황별 코디 추천</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>👗 오늘 뭐 입지? 👔</h1>
+        <p class="subtitle">상황을 선택하고 옷 추천 버튼을 눌러보세요!</p>
+
+        <div class="input-group">
+            <label for="situation-select">어떤 상황인가요?</label>
+            <select id="situation-select">
+                <option value="company">🏢 출근 / 회사</option>
+                <option value="date">❤️ 데이트</option>
+                <option value="exercise">🏃‍♂️ 운동 / 헬스</option>
+                <option value="rest">🛋️ 집에서 휴식</option>
+                <option value="party">🎉 파티 / 경사</option>
+            </select>
+        </div>
+
+        <button id="recommend-btn">옷 추천 받기</button>
+
+        <div id="result-card" class="result-card hidden">
+            <div id="emoji-display" class="emoji-display"></div>
+            <h2 id="outfit-title"></h2>
+            <p id="outfit-desc"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

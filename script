@@ -1,0 +1,52 @@
+// 상황별 옷 데이터 (이모지, 제목, 상세 설명)
+const outfitData = {
+    company: {
+        emojis: "👔 👖 👞 💼",
+        title: "깔끔한 댄디 룩 / 비즈니스 캐주얼",
+        desc: "셔츠에 슬랙스, 옥스퍼드 화를 매치하여 단정하면서도 스마트한 인상을 줍니다."
+    },
+    date: {
+        emojis: "🧥 👕 👖 👟 🌸",
+        title: "화사하고 남친/여친룩 스타일",
+        desc: "니트나 가디건에 깔끔한 데님 팬츠, 그리고 스니커즈로 편안함과 스타일을 모두 챙겨보세요!"
+    },
+    exercise: {
+        emojis: "👕 🩳 👟 🧢 🧦",
+        title: "스포티한 액티브 웨어",
+        desc: "땀 흡수가 잘 되는 기능성 반팔티와 숏팬츠, 편안한 런닝화를 착용하세요."
+    },
+    rest: {
+        emojis: "👕 🩳 🩴",
+        title: "편안한 집콕 원마일웨어",
+        desc: "오버핏 박스티와 오버사이즈 트레이닝 바지로 극강의 편안함을 느껴보세요."
+    },
+    party: {
+        emojis: "👗 👠 💎 👜 🍾",
+        title: "화려한 파티 & 드레스 룩",
+        desc: "세련된 원피스나 정장에 포인트 액세서리와 구두를 매치하여 특별한 날을 빛내보세요."
+    }
+};
+
+// DOM 요소 가져오기
+const selectElement = document.getElementById("situation-select");
+const recommendBtn = document.getElementById("recommend-btn");
+const resultCard = document.getElementById("result-card");
+const emojiDisplay = document.getElementById("emoji-display");
+const outfitTitle = document.getElementById("outfit-title");
+const outfitDesc = document.getElementById("outfit-desc");
+
+// 버튼 클릭 이벤트 리스너
+recommendBtn.addEventListener("click", () => {
+    const selectedSituation = selectElement.value;
+    const recommendation = outfitData[selectedSituation];
+
+    if (recommendation) {
+        // 데이터 채우기
+        emojiDisplay.textContent = recommendation.emojis;
+        outfitTitle.textContent = recommendation.title;
+        outfitDesc.textContent = recommendation.desc;
+
+        // 결과 카드 보이기
+        resultCard.classList.remove("hidden");
+    }
+});
